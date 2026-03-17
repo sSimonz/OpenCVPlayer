@@ -1,0 +1,980 @@
+{
+    "About":{
+        "命名规则": "CN_控件简称_控件对应部分_(状态), 其中CN代表ColorName，举例: CN_TABLEVIEW_ITEM_SELECT",
+        "其它说明": "以下的模块的顺序是按照VMS中功能模块排列的顺序，模块命名按照模块对应的英语"
+    },
+    "Color": {
+        "Global": [
+            {
+                "name":"CN_GLOBAL_TEXT",
+                "hex": "#000000",
+                "note":"全局文本颜色"
+            },
+            {
+                "name":"CN_GLOBAL_TEXT_DISABLE",
+                "hex": "#858585",
+                "note":"全局文本颜色-disabled状态"
+            },
+            {
+                "name":"CN_TOOLTIP_TEXT",
+                "hex": "#575757",
+                "note":"QToolTip文本颜色"
+            },
+            {
+                "name":"CN_THEME_BACKGROUND",
+                "hex": "#ffffff",
+                "note":"主题背景色"
+            },
+            {
+                "name":"CN_INPUT_BACKGROUND",
+                "hex": "#ffffff",
+                "note":"表格类、输入类等显示数据的控件背景"
+            },
+            {
+                "name":"CN_FIELD_BACKGROUND",
+                "hex": "#d6e2ec",
+                "note":"一些子容器控件内部背景，比如QWidget、QFrame、QTabWidget"
+            },
+            {
+                "name":"CN_INPUTWIDGET_BORDER",
+                "hex": "#b3b3b3",
+                "note":"输入框、combobox边框颜色"
+            },
+            {
+                "name":"CN_INPUTWIDGET_BORDER_HOVER",
+                "hex": "#666666",
+                "note":"输入框、combobox边框颜色-悬停"
+            },
+            {
+                "name":"CN_CALENDAR_WEEKLAB_TEXT",
+                "hex": "#438dec",
+                "note":"日历星期表头文本"
+            },
+            {
+                "name":"CN_CALENDAR_CALBTN_RECORD",
+                "hex": "#ff8913",
+                "note":"日历日期按钮-录像标记颜色"
+            },
+            {
+                "name":"CN_CALENDAR_CALBTN_TEXT_WORKDAY",
+                "hex": "#000000",
+                "note":"日历日期按钮文本-工作日"
+            },
+            {
+                "name":"CN_CALENDAR_CALBTN_TEXT_WEEKEND",
+                "hex": "#ff0000",
+                "note":"日历日期按钮文本-周末"
+            },
+            {
+                "name":"CN_CALENDAR_CALBTN_TEXT_SELECT",
+                "hex": "#ffffff",
+                "note":"日历日期按钮文本-选中"
+            },
+            {
+                "name":"CN_CALENDAR_CALBTN_TEXT_PREV_OR_NEXT",
+                "hex": "#817889",
+                "note":"日历日期按钮文本-其他月份"
+            },
+            {
+                "name":"CN_CALENDAR_CALBTN_BG_HOVER",
+                "hex": "#accbdb",
+                "note":"日历日期按钮背景-悬停"
+            },
+            {
+                "name":"CN_CALENDAR_CALBTN_BG_SELECT",
+                "hex": "#3b92c9",
+                "note":"日历日期按钮背景-选中"
+            },
+            {
+                "name":"CN_DIALOG_BACKGROUND",
+                "hex": "#FFFFFF",
+                "note":"弹窗背景"
+            },
+            {
+                "name":"CN_DIALOG_TITLT_TEXT",
+                "hex": "#000000",
+                "note":"弹窗标题栏文本"
+            },
+            {
+                "name":"CN_DIALOG_SUB_TITLT_TEXT",
+                "hex": "#999999",
+                "note":"弹窗副标题文本"
+            },
+            {
+                "name":"CN_DIALOG_TITLE_BACKGROUND",
+                "hex": "#e3e6eb",
+                "note":"弹窗标题栏背景-默认"
+            },
+            {
+                "name":"CN_DIALOG_TITLE_BACKGROUND_WARN",
+                "hex": "#e43333",
+                "note":"弹窗标题栏背景-警告"
+            },
+            {
+                "name":"CN_TABLEVIEWITEM_BACKGROUND_ALTERNATE",
+                "hex": "#f3f5f7",
+                "note":"表格视图交替颜色显示时的交替色"
+            },
+            {
+                "name":"CN_TABLEVIEWITEM_BACKGROUND_SELECTION",
+                "hex": "#DCEEFF",
+                "note":"表格视图选中时的背景"
+            },
+            {
+                "name":"CN_TABLEVIEWITEM_NODATA_TEXT",
+                "hex": "#bebebe",
+                "note":"表格视图无数据时显示的NO DATA文本颜色"
+            },
+            {
+                "name":"CN_HEADERVIEW_TEXT",
+                "hex": "#ffffff",
+                "note":"表头文本"
+            },
+            {
+                "name":"CN_HEADERVIEW_BACKGROUND",
+                "hex": "#8B959F",
+                "note":"表头背景"
+            },
+            {
+                "name":"CN_TABLEVIEW_HEADER_BORDER",
+                "hex": "#CDD1D6",
+                "note":"表头分割线"
+            },
+            {
+                "name":"CN_TABLEVIEW_ITEM_HOVER",
+                "hex": "#DCEEFF",
+                "note":"表格项背景-悬停"
+            },
+            {
+                "name":"CN_LISTWIDGETITEM_BACKGROUND_HOVER",
+                "hex": "#DCEEFF",
+                "note":"列表视图项背景-悬停"
+            },
+            {
+                "name":"CN_TREEVIEWITEM_BACKGROUND_HOVER",
+                "hex": "#DCEEFF",
+                "note":"树表item背景-悬停"
+            },
+            {
+                "name":"CN_QSCROLLBAR_BACKGROUND",
+                "hex": "#f2f3f4",
+                "note":"滚动条背景"
+            },
+            {
+                "name":"CN_QSCROLLBAR_HANDLE_NORMAL",
+                "hex": "#b1b6bb",
+                "note":"滚动条handle背景"
+            },
+            {
+                "name":"CN_QSCROLLBAR_HANDLE_PRESS",
+                "hex": "#7d8a93",
+                "note":"滚动条句柄背景-选中"
+            },
+            {
+                "name":"CN_SLIDER_GROOVE_BORDER",
+                "hex": "#999999",
+                "note":"滑块边框,此颜色不会显示出来"
+            },
+            {
+                "name":"CN_SLIDER_MINSIDE",
+                "hex": "#336ed3",
+                "note":"滑块左侧/下侧的颜色"
+            },
+            {
+                "name":"CN_SLIDER_MAXSIDE",
+                "hex": "#b7d4e6",
+                "note":"滑块右侧/上侧的颜色"
+            },
+            {
+                "name":"CN_SWITCHBTN_DOT",
+                "hex": "#ffffff",
+                "note":"开关控件圆点"
+            },
+            {
+                "name":"CN_SWITCHBTN_DOT_DISABLE",
+                "hex": "#d9d9d9",
+                "note":"开关控件圆点-disabled"
+            },
+            {
+                "name":"CN_SWITCHBTN_ON",
+                "hex": "#438dec",
+                "note":"开关控件背景 开"
+            },
+            {
+                "name":"CN_SWITCHBTN_ON_DISABLE",
+                "hex": "#86b3ec",
+                "note":"开关控件背景 开-disabled"
+            },
+            {
+                "name":"CN_SWITCHBTN_OFF",
+                "hex": "#9fabb8",
+                "note":"开关控件背景 关"
+            },
+            {
+                "name":"CN_SWITCHBTN_OFF_DISABLE",
+                "hex": "#ebebeb",
+                "note":"开关控件背景 关-disabled"
+            },
+            {
+                "name":"CN_GROUPBOX_BORDER",
+                "hex": "#dcdcdc",
+                "note":"groupbox边框"
+            },
+            {
+                "name":"CN_MSGPOPUP_TEXT_SUCCESS",
+                "hex": "#0f4cb2",
+                "note":"右下角弹窗文本-成功"
+            },
+            {
+                "name":"CN_MSGPOPUP_TEXT_FAILED",
+                "hex": "#e43333",
+                "note":"右下角弹窗文本-失败"
+            },
+            {
+                "name":"CN_TOOLBTN_BACKGROUND_NORMAL",
+                "hex": "#00000000",
+                "note":"tool按钮背景"
+            },
+            {
+                "name":"CN_TOOLBTN_BACKGROUND_HOVER",
+                "hex": "#00000000",
+                "note":"tool按钮背景-悬停"
+            },
+            {
+                "name":"CN_TOOLBTN_BACKGROUND_DISABLE",
+                "hex": "#00000000",
+                "note":"tool按钮背景-diasbled"
+            },
+            {
+                "name":"CN_ICONBTN_TEXT",
+                "hex": "#ffffff",
+                "note":"按钮文本"
+            },
+            {
+                "name":"CN_ICONBTN_TEXT_DISABLE",
+                "hex": "#a0a0a0",
+                "note":"按钮文本-disabled"
+            },
+            {
+                "name":"CN_ICONBTN_TEXT_CHECK",
+                "hex": "#ffffff",
+                "note":"按钮文本-checked"
+            },
+            {
+                "name":"CN_ICONBTN_BACKGROUND_NORMAL",
+                "hex": "#438DEC",
+                "note":"按钮背景"
+            },
+            {
+                "name":"CN_ICONBTN_BACKGROUND_HOVER",
+                "hex": "#0f4cb2",
+                "note":"按钮背景-悬停"
+            },
+            {
+                "name":"CN_ICONBTN_BACKGROUND_CHECK",
+                "hex": "#0f4cb2",
+                "note":"按钮背景-选中"
+            },
+            {
+                "name":"CN_ICONBTN_BACKGROUND_DISABLE",
+                "hex": "#dcdee2",
+                "note":"按钮背景-disabled"
+            },
+            {
+                "name":"CN_ICONBTN_BORDER",
+                "hex": "#438dec",
+                "note":"按钮边框"
+            },
+            {
+                "name":"CN_DIVIDING_LINE_BG",
+                "hex": "#e2e4e5",
+                "note":"分割线背景"
+            },
+            {
+                "name":"CN_TOOLBOX_BG",
+                "hex": "#e3e6eb",
+                "note":"左侧工具箱背景"
+            },
+            {
+                "name":"CN_MENU_BG",
+                "hex": "#ffffff",
+                "note":"菜单背景"
+            },
+            {
+                "name":"CN_MENU_ACTION_TEXT_SELECTED",
+                "hex": "#438dec",
+                "note":"菜单可选ACTION的文本-选中状态"
+            },
+            {
+                "name":"CN_MENU_ACTION_BACKGROUND_HOVER",
+                "hex": "#DCEEFF",
+                "note":"菜单ACTION背景-悬停"
+            },
+            {
+                "name":"CN_MENU_ACTION_SEPARATOR",
+                "hex": "#19333333",
+                "note":"菜单ACTION分隔线"
+            },
+            {
+                "name":"CN_RADIOBTN_TEXT_CHECKED",
+                "hex": "#eb6100",
+                "note":"单选按钮选中文本颜色"
+            },
+            {
+                "name":"CN_TEXTEDIT_BORDER",
+                "hex": "#d4d5d7",
+                "note":"文本编辑框边框"
+            },
+            {
+                "name":"CN_PROGRESSBAR_CHUNK",
+                "hex": "#8bbcf6",
+                "note":"进度条左侧的颜色"
+            },
+            {
+                "name":"CN_PROGRESSBAR_BG",
+                "hex": "#eaecee",
+                "note":"进度条右侧的颜色"
+            },
+            {
+                "name":"CN_TIPS_COLOR",
+                "hex": "#999999",
+                "note":"提示标签文本颜色"
+            },
+            {
+                "name":"CN_TIPS_BG",
+                "hex": "#f9f9f9",
+                "note":"提示标签背景颜色"
+            },
+            {
+                "name":"CN_TABBAR_TEXT_NORMAL",
+                "hex": "#333333",
+                "note":"标签栏文本颜色"
+            },
+            {
+                "name":"CN_TABBAR_TEXT_SELECT",
+                "hex": "#000000",
+                "note":"标签栏文本颜色-选中状态"
+            },
+            {
+                "name":"CN_TABBAR_TEXT_BORDER_BOTTOM",
+                "hex": "#e3e6eb",
+                "note":"标签栏边框底部颜色"
+            },
+            {
+                "name":"CN_TABBAR_TEXT_BORDER_BOTTOM_SELECT",
+                "hex": "#438dec",
+                "note":"标签栏边框底部颜色-选中状态"
+            },
+            {
+                "name":"CN_BLACK_POPUP_BG",
+                "hex": "#000000",
+                "note":"透明黑浮窗背景，透明度通过QColor自行调整"
+            },
+            {
+                "name":"CN_BLACK_POPUP_TEXT",
+                "hex": "#ECECEC",
+                "note":"透明黑浮窗背景中的文本颜色"
+            }
+        ],
+        "Home Page": [
+            {
+                "name":"CN_CPU_BACKGROUND_NORMAL",
+                "hex": "#eaecee",
+                "note":"CPU条背景-未占用部分"
+            },
+            {
+                "name":"CN_CPU_BACKGROUND_OCCUPY",
+                "hex": "#8bbcf6",
+                "note":"CPU条背景-已占用部分"
+            },
+            {
+                "name":"CN_TITLEBAR_BACKGROUND",
+                "hex": "#e3e6eb",
+                "note":"程序标题栏背景"
+            },
+            {
+                "name":"CN_TITLEBARTAB_BACKGROUND_HOVER",
+                "hex": "#cacdd2",
+                "note":"程序标题栏Tab背景-悬停"
+            },
+            {
+                "name":"CN_TITLEBARTAB_SPLITLINE",
+                "hex": "#bcc4ce",
+                "note":"程序标题栏Tab分割线"
+            },
+            {
+                "name":"CN_TITLEBARTAB_CLOSEBTN_BG_HOVER",
+                "hex": "#e8eaec",
+                "note":"程序标题栏Tab关闭按钮背景-悬停"
+            },
+            {
+                "name":"CN_HOMEPAGE_DEVINFO_TEXT_TOTAL",
+                "hex": "#60a2ee",
+                "note":"主页右侧设备在线信息文本-总数"
+            },
+            {
+                "name":"CN_HOMEPAGE_DEVINFO_BG_TOTAL",
+                "hex": "#eef5fd",
+                "note":"主页右侧设备在线信息背景-总数"
+            },
+            {
+                "name":"CN_HOMEPAGE_DEVINFO_BORDER_TOTAL",
+                "hex": "#c7def8",
+                "note":"主页右侧设备在线信息边框-总数"
+            },
+            {
+                "name":"CN_HOMEPAGE_DEVINFO_TEXT_ONLINE",
+                "hex": "#36b932",
+                "note":"主页右侧设备在线信息文本-在线"
+            },
+            {
+                "name":"CN_HOMEPAGE_DEVINFO_BG_ONLINE",
+                "hex": "#e9f7e9",
+                "note":"主页右侧设备在线信息背景-在线"
+            },
+            {
+                "name":"CN_HOMEPAGE_DEVINFO_BORDER_ONLINE",
+                "hex": "#b9e5b7",
+                "note":"主页右侧设备在线信息边框-在线"
+            },
+            {
+                "name":"CN_HOMEPAGE_DEVINFO_TEXT_OFFLINE",
+                "hex": "#888888",
+                "note":"主页右侧设备在线信息文本-离线"
+            },
+            {
+                "name":"CN_HOMEPAGE_DEVINFO_BG_OFFLINE",
+                "hex": "#f2f2f2",
+                "note":"主页右侧设备在线信息背景-离线"
+            },
+            {
+                "name":"CN_HOMEPAGE_DEVINFO_BORDER_OFFLINE",
+                "hex": "#d4d4d4",
+                "note":"主页右侧设备在线信息边框-离线"
+            },
+            {
+                "name":"CN_HOMEPAGE_TIMELABEL_TEXT",
+                "hex": "#888888",
+                "note":"主页右侧时间信息文本"
+            },
+            {
+                "name":"CN_HOMEPAGE_HINTLABEL_BG",
+                "hex": "#60a2ee",
+                "note":"主页右侧概述/管理图标颜色"
+            },
+            {
+                "name":"CN_HOMEPAGE_USERLABEL_TEXT",
+                "hex": "#60a2ee",
+                "note":"主页右登录用户文本"
+            },
+            {
+                "name":"CN_HOMEPAGE_TOOLBTN_BG_NORMAL",
+                "hex": "#f3f4f5",
+                "note":"主页按钮常规背景色"
+            },
+            {
+                "name":"CN_HOMEPAGE_TOOLBTN_BG_HOVER",
+                "hex": "#c5cacf",
+                "note":"主页按钮悬浮背景色"
+            },
+            {
+                "name":"CN_HOMEPAGE_TOOLBTN_BORDER",
+                "hex": "#e3e6eb",
+                "note":"主页按钮边框颜色"
+            },
+            {
+                "name":"CN_ALARM_BAR_BACKGROUND",
+                "hex": "#101112",
+                "note":"告警栏背景"
+            },
+            {
+                "name":"CN_USERLOGIN_TITLE_TEXT",
+                "hex": "#438DEC",
+                "note":"登录页面标题文本"
+            },
+            {
+                "name":"CN_USERLOGIN_TIPS_TEXT",
+                "hex": "#e43333",
+                "note":"登录页面提示文本"
+            },
+            {
+                "name":"CN_USERLOGIN_LINK_TEXT",
+                "hex": "#438DEC",
+                "note":"登录页面超链接文本"
+            },
+            {
+                "name":"CN_USERLOGIN_SUBTITLE_TEXT",
+                "hex": "#74859B",
+                "note":"登录页面副标题文本"
+            }           
+        ],
+        "MainView": [
+            {
+                "name":"CN_VIEWSCREEN_BACKGROUND",
+                "hex": "#7b7d80",
+                "note":"视频窗体背景"
+            },
+            {
+                "name":"CN_VIEWSCREEN_BORDER_NORMAL",
+                "hex": "#888888",
+                "note":"视频窗体边框-未选中"
+            },
+            {
+                "name":"CN_VIEWSCREEN_BORDER_SELECT",
+                "hex": "#438DEC",
+                "note":"视频窗体边框-选中"
+            },
+            {
+                "name":"CN_HIDEWIDGETBTN_BAR_BACKGROUND_1",
+                "hex": "#B1B6BB",
+                "note":"预览、回放页，隐藏左侧控件的按钮-分隔条渐变背景1"
+            },
+            {
+                "name":"CN_HIDEWIDGETBTN_BAR_BACKGROUND_2",
+                "hex": "#B1B6BB",
+                "note":"预览、回放页，隐藏左侧控件的按钮-分隔条渐变背景2"
+            },
+            {
+                "name":"CN_HIDEWIDGETBTN_BAR_BACKGROUND_3",
+                "hex": "#B1B6BB",
+                "note":"预览、回放页，隐藏左侧控件的按钮-分隔条渐变背景3"
+            },
+            {
+                "name":"CN_HIDEWIDGETBTN_BTN_BACKGROUND_1",
+                "hex": "#438DEC",
+                "note":"预览、回放页，隐藏左侧控件的按钮-按钮渐变背景1"
+            },
+            {
+                "name":"CN_HIDEWIDGETBTN_BTN_BACKGROUND_2",
+                "hex": "#438DEC",
+                "note":"预览、回放页，隐藏左侧控件的按钮-按钮渐变背景2"
+            },
+            {
+                "name":"CN_HIDEWIDGETBTN_BTN_BACKGROUND_3",
+                "hex": "#438DEC",
+                "note":"预览、回放页，隐藏左侧控件的按钮-按钮渐变背景3"
+            },
+            {
+                "name":"CN_VIDEOSCREENLAYOUTMENU_TOOLBTN_BG",
+                "hex": "#00000000",
+                "note":"视频屏幕布局菜单按钮背景"
+            },
+            {
+                "name":"CN_VIDEOSCREENLAYOUTMENU_TOOLBTN_BG_HOVER",
+                "hex": "#3278a5",
+                "note":"视频屏幕布局菜单按钮背景-悬停"
+            },
+            {
+                "name":"CN_VIDEOSCREENLAYOUTMENU_TOOLBTN_TEXT_NORMAL",
+                "hex": "#ffffff",
+                "note":"视频屏幕布局菜单按钮文本"
+            },
+            {
+                "name":"CN_VIDEOSCREENLAYOUTMENU_TOOLBTN_TEXT_HOVER",
+                "hex": "#000000",
+                "note":"视频屏幕布局菜单按钮文本-悬停"
+            },
+            {
+                "name":"CN_PREVIEWFACELISTITEM_TITLE_TEXT",
+                "hex": "#ffffff",
+                "note":"预览页右侧告警缩略图标题文本"
+            },
+            {
+                "name":"CN_PREVIEWFACELISTITEM_TITLE_BG",
+                "hex": "#16191e",
+                "note":"预览页右侧告警缩略图标题背景"
+            },
+            {
+                "name":"CN_PREVIEWFACELISTITEM_WHITELIST",
+                "hex": "#33e433",
+                "note":"预览页右侧告警缩略图-白名单颜色"
+            },
+            {
+                "name":"CN_PREVIEWFACELISTITEM_BLACKLIST",
+                "hex": "#e43333",
+                "note":"预览页右侧告警缩略图-黑名单颜色"
+            },
+            {
+                "name":"CN_DEVICEBASEINFO_TITLE",
+                "hex": "#8f8f8f",
+                "note":"预览页设备信息弹窗标题颜色"
+            },
+            {
+                "name":"CN_VIEWSCREEN_CHNAME_TIME",
+                "hex": "#ff0000",
+                "note":"视频预览通道名、时间文本颜色"
+            },
+            {
+                "name":"CN_DEVICE_TREE_BG",
+                "hex": "#FAFBFC",
+                "note":"设备树背景"
+            },
+            {
+                "name":"CN_PREVIEWFACELISTITEM_SUBTITLE",
+                "hex": "#888888",
+                "note":"预览页右侧告警缩略图-副标题颜色"
+            },
+        {
+                "name":"CN_360_PROGRESSBAR_BG",
+                "hex": "#888888",
+                "note":"预览页全景进度条背景"
+            },
+            {
+                "name":"CN_360_PROGRESSBAR_TEXT",
+                "hex": "#ffffff",
+                "note":"预览页全景进度条文本"
+            }
+        ],
+        "Playback": [
+            {
+                "name":"CN_PLAYBACK_TIMECTRL_BACKGROUND_EMPTY",
+                "hex": "#c7d6de",
+                "note":"回放时间轴背景-空状态"
+            },
+            {
+                "name":"CN_PLAYBACK_TIMECTRL_TIMELINE_TEXT",
+                "hex": "#666666",
+                "note":"回放时间轴刻度-文本颜色"
+            },
+            {
+                "name":"CN_PLAYBACK_TIMECTRL_TIMELINE_SCALE",
+                "hex": "#999999",
+                "note":"回放时间轴刻度-线颜色"
+            },
+            {
+                "name":"CN_PLAYBACK_TIMECTRL_CLIP_BACKGROUND",
+                "hex": "#333333",
+                "note":"回放时间轴-裁剪下载选中区域左右刻度颜色"
+            },
+            {
+                "name":"CN_PLAYBACK_TIMECTRL_CLIP_TEXT",
+                "hex": "#ffffff",
+                "note":"回放时间轴-裁剪下载选中区域左右时间文本颜色"
+            },
+            {
+                "name":"CN_PLAYBACK_TYPE_COMMON",
+                "hex": "#72eb6b",
+                "note":"回放类型-Common"
+            },
+            {
+                "name":"CN_PLAYBACK_TYPE_MOTION",
+                "hex": "#ffe66a",
+                "note":"回放类型-Motion"
+            },
+            {
+                "name":"CN_PLAYBACK_TYPE_SMART",
+                "hex": "#6bf0ff",
+                "note":"回放类型-Smart"
+            },
+            {
+                "name":"CN_PLAYBACK_VIDEO_INFOBAR_BG",
+                "hex": "#101010",
+                "note":"回放窗体信息条背景"
+            },
+            {
+                "name":"CN_PLAYBACK_VIDEO_INFOBAR_TEXT",
+                "hex": "#ffffff",
+                "note":"回放窗体信息条文本"
+            },
+            {
+                "name":"CN_BG_DOWNLOAD_BG",
+                "hex": "#ffffff",
+                "note":"后台下载页面背景颜色"
+            },
+            {
+                "name":"CN_BG_DOWNLOAD_LISTWIDGET_BG",
+                "hex": "#ffffff",
+                "note":"后台下载页列表窗口背景颜色"
+            },
+            {
+                "name":"CN_BG_DOWNLOAD_ITEM_BG",
+                "hex": "#ffffff",
+                "note":"后台下载页下载项背景颜色"
+            },
+            {
+                "name":"CN_BG_DOWNLOAD_ITEM_BORDER",
+                "hex": "#cecece",
+                "note":"后台下载页下载项边框颜色"
+            },
+            {
+                "name":"CN_BG_DOWNLOAD_ITEM_SELECT",
+                "hex": "#ffffff",
+                "note":"后台下载页下载项悬停选中颜色"
+            },
+            {
+                "name":"CN_BG_DOWNLOAD_ITEM_TIP_TEXT",
+                "hex": "#ff0300",
+                "note":"后台下载页下载项下载异常文本颜色"
+            },
+            {
+                "name":"CN_BG_DOWNLOAD_ITEM_TIP_COM_TEXT",
+                "hex": "#eb6100",
+                "note":"后台下载页下载项下载完成文本颜色"
+            },
+            {
+                "name":"CN_BG_DOWNLOAD_ITEM_TIME_TEXT",
+                "hex": "#888888",
+                "note":"后台下载页下载项时间文本颜色"
+            },
+            {
+                "name":"CN_PLAYBACK_BUTTON_CONTROL_BG",
+                "hex": "#EBEEF2",
+                "note":"回放窗体按钮控制条背景"
+            },
+            {
+                "name":"CN_PLAYBACK_FISHEYE_TABBAR_BG",
+                "hex": "#EBEEF2",
+                "note":"鱼眼窗体页签栏背景"
+            }
+        ],
+        "Log Search": [
+
+        ],
+        "Topology Management": [
+
+        ],
+        "AI Search": [
+            {
+                "name":"CN_AISEARCH_SIDE_TAB_BAR_BG",
+                "hex": "#EBEEF2",
+                "note":"人脸搜索左侧页标签栏背景"
+            },
+            {
+                "name":"CN_AISEARCH_DEV_BTN_BG_SELECTED",
+                "hex": "#CFE8FF",
+                "note":"设备按钮选中背景"
+            },
+            {
+                "name":"CN_AISEARCH_DEV_BTN_BG_UNSELECT",
+                "hex": "#EBEEF2",
+                "note":"设备按钮未选中背景"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_TITLE_TEXT_COLOR",
+                "hex": "#FFFFFF",
+                "note":"图片控件标题栏标题文本"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_TITLE_BG_SELECTED",
+                "hex": "#87BEEE",
+                "note":"图片控件标题栏选中背景颜色"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_TITLE_BG_UNSELECT",
+                "hex": "#8B959F",
+                "note":"图片控件标题栏未选中背景颜色"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_BORDER_COLOR_SELECTED",
+                "hex": "#BBD8F2",
+                "note":"图片控件选中边框颜色"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_BORDER_COLOR_UNSELECT",
+                "hex": "#CDD1D6",
+                "note":"图片控件未选中边框颜色"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_BG_SELECTED",
+                "hex": "#DCEEFF",
+                "note":"图片控件选中背景颜色"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_BG_UNSELECT",
+                "hex": "#FAFBFC",
+                "note":"图片控件未选中背景颜色"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_GROUPTEXT_COLOR",
+                "hex": "#FFFFFF",
+                "note":"图片控件人脸组文本颜色"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_GROUPTEXT_BG_ALLOW",
+                "hex": "#52E121",
+                "note":"图片控件白名单文本背景"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_GROUPTEXT_BG_BLOCK",
+                "hex": "#FF2323",
+                "note":"图片控件黑名单文本背景"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_GROUPTEXT_BG_STRANGER",
+                "hex": "#B392F6",
+                "note":"图片控件陌生人组文本背景"
+            },
+            {
+                "name":"CN_AISEARCH_IMAGEWIDGET_SUBTEXT_COLOR",
+                "hex": "#888888",
+                "note":"图片控件副文本颜色"
+            },
+            {
+                "name":"CN_AISEARCH_INFOWIDGET_PIC_BG",
+                "hex": "#E3E6EB",
+                "note":"抓拍人脸信息界面抓拍图片所在控件背景"
+            },
+            {
+                "name":"CN_AISEARCH_INFOWIDGET_LINE_COLOR",
+                "hex": "#CDD1D6",
+                "note":"抓拍人脸信息界面分界线颜色"
+            },
+            {
+                "name":"CN_AISEARCH_ADDPICWIDGET_BG",
+                "hex": "#EBEEF2",
+                "note":"添加设备图片翻页操作栏背景"
+            },
+            {
+                "name":"CN_AISEARCH_INFOWIDGET_FRAME_BORDER_COLOR",
+                "hex": "#E3E6EB",
+                "note":"抓拍人脸信息界面Frame边框颜色"
+            },
+            {
+                "name":"CN_AISEARCH_INFOWIDGET_LABEL_BG_COLOR",
+                "hex": "#60A2EE",
+                "note":"抓拍人脸信息界面标题图标颜色"
+            }
+        ],
+        "Data Analysis": [
+            {
+                "name":"CN_ANALYSIS_BARCHART_STRIPE_COLOR",
+                "hex": "#438DEC",
+                "note":"柱状图纵向条纹颜色"
+            },
+            {
+                "name":"CN_ANALYSIS_BARCHART_GRID_COLOR",
+                "hex": "#E3E6EB",
+                "note":"柱状图栅格线颜色"
+            }
+        ],
+        "AI Scene": [
+            {
+                "name":"CN_SCENE_CC_ENTER_COLOR",
+                "hex": "#438DEC",
+                "note":"过线统计进入颜色"
+            },
+            {
+                "name":"CN_SCENE_CC_EXIT_COLOR",
+                "hex": "#B392F6",
+                "note":"过线统计退出颜色"
+            },
+            {
+                "name":"CN_SCENE_CC_INSIDE_COLOR",
+                "hex": "#FFBD23",
+                "note":"过线统计内部颜色"
+            },
+            {
+                "name":"CN_SUB_MODULES_TITLE_BG",
+                "hex": "#F3F5F7",
+                "note":"子模块标题栏背景"
+            },
+            {
+                "name":"CN_SCENE_ENTER_GREEN",
+                "hex": "#3BBE2A",
+                "note":"过线统计进入绿色"
+            },
+            {
+                "name":"CN_SCENE_ENTER_RED",
+                "hex": "#ec2222",
+                "note":"过线统计进入红色"
+            }
+        ],
+        "Cloud Alarm": [
+            {
+                "name":"CN_MSG_INFO_BORDER",
+                "hex": "#CDD1D6",
+                "note":"云告警页信息框边框"
+            },
+            {
+                "name":"CN_MSG_INFO_BORDER_SELECT",
+                "hex": "#438DEC",
+                "note":"云告警页信息框边框-选中"
+            },
+            {
+                "name":"CN_MSG_INFO_BG",
+                "hex": "#FAFBFC",
+                "note":"云告警页信息框背景"
+            },
+            {
+                "name":"CN_MSG_INFO_BG_SELECT",
+                "hex": "#E9F4FF",
+                "note":"云告警页信息框背景-选中"
+            },
+            {
+                "name":"CN_MSG_INFO_TIME_TEXT",
+                "hex": "#999999",
+                "note":"云告警页信息框时间、消息文本"
+            },
+            {
+                "name":"CN_MSG_TITLE_TIME_TEXT",
+                "hex": "#438DEC",
+                "note":"云告警页标题时间文本"
+            }
+        ],
+        "Device Management": [
+
+        ],
+        "Alarm Config": [
+            {
+                "name":"CN_SIDE_TAB_BAR_BG",
+                "hex": "#EBEEF2",
+                "note":"告警配置左侧页签栏背景"
+            },
+            {
+                "name":"CN_ALARM_SCHEDULE_UNSELECT",
+                "hex": "#EAECEE",
+                "note":"告警配置计划表未选中颜色"
+            },
+            {
+                "name":"CN_ALARM_SCHEDULE_SELECTED",
+                "hex": "#90E672",
+                "note":"告警配置计划表已选中颜色"
+            },
+            {
+                "name":"CN_ALARM_SCHEDULE_DIVIDE_LINE",
+                "hex": "#FFFFFF",
+                "note":"告警配置计划表分割线"
+            },
+            {
+                "name":"CN_ALARM_SCHEDULE_COVER_BG",
+                "hex": "#8087BEEE",
+                "note":"告警配置计划表拖动覆盖颜色"
+            },
+            {
+                "name":"CN_ALARM_EVENT_VIDEO_DEFAULT_BG",
+                "hex": "#EDEEEF",
+                "note":"告警事件中心录像、图片默认颜色"
+            }
+        ],
+        "Cruise Setting": [
+            {
+                "name":"CN_CRUISE_TASK_BG",
+                "hex": "#F4F6F8",
+                "note":"轮询页面任务控件背景"
+            },
+            {
+                "name":"CN_CRUISE_TASK_BORDER",
+                "hex": "#E3E6EB",
+                "note":"轮询页面任务控件边框"
+            }
+        ],
+        "Account Management": [
+
+        ],
+        "Local Record": [
+
+        ],
+        "System config": [
+
+        ],
+        "AI Config": [
+
+        ],
+        "Emap Config": [
+
+        ],
+        "Emap Monitoring": [
+
+        ]
+    }
+}

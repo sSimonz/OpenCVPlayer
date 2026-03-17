@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.9.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+<rect fill="none" width="20" height="20"/>
+<g id="cloud4">
+	<path fill="#A4A4A4" d="M15,17c2.757,0,5-2.243,5-5s-2.243-5-5-5c-0.115,0-0.231,0.005-0.351,0.015C13.824,4.638,11.587,3,9,3
+		C5.691,3,3,5.691,3,9c0,0.042,0,0.084,0.001,0.126C1.277,9.571,0,11.139,0,13c0,2.206,1.794,4,4,4H15z"/>
+	<g>
+		
+			<line fill="none" stroke="#F84444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="10" y1="18" x2="16" y2="12"/>
+		
+			<line fill="none" stroke="#F84444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="16" y1="18" x2="10" y2="12"/>
+	</g>
+</g>
+</svg>

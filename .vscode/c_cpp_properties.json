@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/Users/mac/Qt/6.9.3/macos/lib/QtWidgets.framework/Headers",
+                "/Users/mac/Qt/6.9.3/macos/lib/QtCore.framework/Headers",
+                "/Users/mac/Qt/6.9.3/macos/lib/QtGui.framework/Headers",
+                "/Users/mac/Qt/6.9.3/macos/include",
+                "/usr/local/opencv/include/opencv4/opencv2",
+                "/opt/homebrew/Cellar/ffmpeg/7.1.1_2/include"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**",
+                    "/Users/mac/Qt/6.9.3/macos/lib/QtWidgets.framework/Headers",
+                    "/Users/mac/Qt/6.9.3/macos/lib/QtCore.framework/Headers",
+                    "/Users/mac/Qt/6.9.3/macos/lib/QtGui.framework/Headers",
+                    "/Users/mac/Qt/6.9.3/macos/include",
+                    "/usr/local/opencv/include/opencv4/opencv2",
+                    "/opt/homebrew/Cellar/ffmpeg/7.1.1_2/include"
+                ],
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "defines": [],
+            "compilerPath": "/usr/bin/clang++",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "macos-clang-arm64",
+            "macFrameworkPath": [
+                "/Users/mac/Qt/6.9.3/macos/lib",
+                "/usr/local/opencv/lib",
+                "/opt/homebrew/Cellar/ffmpeg/7.1.1_2/lib"
+            ]
+        }
+    ],
+    "version": 4
+}
