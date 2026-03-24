@@ -119,11 +119,12 @@ public:
 
     void SetTitleText(const QString &title);     //设置标题文本
     void SetSubTitleText(const QString &title);  //设置副标题文本，默认不可见
-    QString GetSubTitleText();  //获取副标题文本
+    QString GetSubTitleText();                   //获取副标题文本
     void SetIconPath(const QString &path);       //设置左侧图标
     void SetTitleTextColor(const QColor &color); //设置标题栏文本颜色
     void SetIconVisible(bool visible);           //设置左侧图标是否可见
     void SetCloseBtnVisible(bool visible);       //设置关闭按钮是否可见
+    int GetTitleHeight();                        //获取标题栏高度
 
     void SetScale(qreal scale);                  //缩放，在DigiBaseDialog的缩放函数中调用
 

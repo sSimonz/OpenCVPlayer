@@ -29,12 +29,14 @@ include($$PWD/BaseUI/BaseUI.pri)
 
 macx:{
     # /opt/homebrew/Cellar/opencv
-    OPENCV_PATH = /usr/local/opencv
+    # OPENCV_PATH = /usr/local/opencv
+    OPENCV_PATH = $$PWD/lib/opencv
     INCLUDEPATH += $${OPENCV_PATH}/include
     INCLUDEPATH += $${OPENCV_PATH}/include/opencv4
     INCLUDEPATH += $${OPENCV_PATH}/include/opencv4/opencv2
 
-    FFMPEG_PATH = /opt/homebrew/Cellar/ffmpeg/7.1.1_2
+    # FFMPEG_PATH = /opt/homebrew/Cellar/ffmpeg/7.1.1_2
+    FFMPEG_PATH = $$PWD/lib/ffmpeg
     INCLUDEPATH += $${FFMPEG_PATH}/include
 
     # 添加常用OpenCV库
@@ -58,6 +60,13 @@ macx:{
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+CONFIG += debug_and_release
+CONFIG(debug, debug|release) {
+DESTDIR = $$PWD/./bin/Debug/
+}else{
+DESTDIR = $$PWD/./bin/Release/
+}
 
 RESOURCES += \
     player.qrc

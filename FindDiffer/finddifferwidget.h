@@ -22,6 +22,7 @@ private:
     void init();
     void createConnect();
     void SetCustomStyleSheet(qreal scale = 1.0) override;
+    void saveConfig();
 
 protected:
     void paintEvent(QPaintEvent *event);
@@ -44,6 +45,8 @@ private:
     QRect m_rightRect;
     QList<QRect> m_listRect;
     QPoint m_initPos;
+    QString m_configPath;
+    int m_borderWidth;
 };
 
 #endif // FINDDIFFERWIDGET_H

@@ -48,15 +48,15 @@ cv::Mat OpenCVManager::image2cvMat(const QImage &image)
     case QImage::Format_ARGB32_Premultiplied:
         mat = cv::Mat(image.height(), image.width(), CV_8UC4, (void*)image.constBits(), image.bytesPerLine());
         cv::cvtColor(mat, mat, COLOR_BGRA2BGR);
-        break;
+        return mat;
     case QImage::Format_RGB888:
         mat = cv::Mat(image.height(), image.width(), CV_8UC3, (void*)image.constBits(), image.bytesPerLine());
         cv::cvtColor(mat, mat, COLOR_BGR2RGB);
-        break;
+        return mat;
     case QImage::Format_Indexed8:
     case QImage::Format_Grayscale8:
         mat = cv::Mat(image.height(), image.width(), CV_8UC1, (void*)image.constBits(), image.bytesPerLine());
-        break;
+        return mat;
     default:
         qDebug() << __FILE__ << __LINE__ << "error to image2Mat !!!  imge.format =" << image.format();
         return mat;

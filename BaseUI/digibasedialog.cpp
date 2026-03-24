@@ -511,6 +511,11 @@ void DigiBaseDialogTitleBar::SetCloseBtnVisible(bool visible)
     m_CloseBtn->setVisible(visible);
 }
 
+int DigiBaseDialogTitleBar::GetTitleHeight()
+{
+    return m_TitleHeight;
+}
+
 void DigiBaseDialogTitleBar::SetScale(qreal scale)
 {
     //高度缩放，宽度自动拉伸无需缩放

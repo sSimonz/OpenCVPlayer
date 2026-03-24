@@ -3,7 +3,8 @@
 #include <QPainter>
 #include <QScreen>
 #include <QApplication>
-#include <QDebug>
+#include <QDir>
+#include <QJsonObject>
 #include "finddiffermanager.h"
 
 FindDifferWidget::FindDifferWidget(QWidget *parent)
@@ -17,6 +18,7 @@ FindDifferWidget::FindDifferWidget(QWidget *parent)
 
 FindDifferWidget::~FindDifferWidget()
 {
+    saveConfig();
     delete ui;
 }
 
@@ -72,6 +74,8 @@ void FindDifferWidget::init()
     ui->m_titleBar->SetTitleText(tr("Find Differ"));
     ui->m_titleBar->setObjectName("titleBar");
 
+    m_initPos = QPoint(285, 188);
+    m_borderWidth = 2;
     m_findDifferManager = new FindDifferManager(this);
     setAttribute(Qt::WA_TranslucentBackground);
     setWindowFlags(Qt::FramelessWindowHint);
@@ -81,7 +85,55 @@ void FindDifferWidget::init()
     ui->m_frame->SetBorderColor(ColorManager::GetColor(ColorManager::CN_GROUPBOX_BORDER));
     ui->m_frameCtrlBar->SetBGColor(ColorManager::GetColor(ColorManager::CN_THEME_BACKGROUND));
     SetScale(1.0);
-    m_initPos = pos();
+
+    // configuration
+    QString appPath = QCoreApplication::applicationDirPath();
+    #ifdef Q_OS_MAC
+        QDir dir(appPath);
+        dir.cdUp();
+        dir.cdUp();
+        dir.cdUp();
+        appPath = dir.absolutePath();
+    #endif
+    m_configPath = QDir(appPath).filePath("config.json");
+    QFile file(m_configPath);
+    if (file.exists())
+    {
+        file.open(QIODevice::ReadOnly | QIODevice::Text);
+        QByteArray jsonData = file.readAll();
+        file.close();
+        QJsonParseError parseError;
+        QJsonDocument doc = QJsonDocument::fromJson(jsonData, &parseError);
+        QJsonObject jsonObj = doc.object();
+        QJsonObject imageObj = jsonObj["image1"].toObject();
+        int x = imageObj["x"].toInt();
+        ui->m_boxLeftX->setValue(x);
+        int y = imageObj["y"].toInt();
+        ui->m_boxLeftY->setValue(y);
+        int w = imageObj["width"].toInt();
+        ui->m_boxLeftW->setValue(w);
+        int h = imageObj["height"].toInt();
+        ui->m_boxLeftH->setValue(h);
+        m_leftRect = QRect(x, y, w, h);
+        imageObj = jsonObj["image2"].toObject();
+        x = imageObj["x"].toInt();
+        ui->m_boxRightX->setValue(x);
+        y = imageObj["y"].toInt();
+        ui->m_boxRightY->setValue(y);
+        w = imageObj["width"].toInt();
+        ui->m_boxRightW->setValue(w);
+        h = imageObj["height"].toInt();
+        m_rightRect = QRect(x, y, w, h);
+        ui->m_boxRightH->setValue(h);
+        QJsonObject posObj = jsonObj["position"].toObject();
+        int posX = posObj["x"].toInt();
+        int posY = posObj["y"].toInt();
+        move(posX, posY);
+        bool bOnTop = jsonObj["onTop"].toInt();
+        ui->m_checkOnTop->setChecked(bOnTop);
+        bool bAutoScan = jsonObj["autoScan"].toInt();
+        ui->m_checkAutoScan->setChecked(bAutoScan);
+    }
 }
 
 void FindDifferWidget::createConnect()
@@ -110,18 +162,47 @@ void FindDifferWidget::createConnect()
     connect(ui->m_titleBar, &DigiBaseDialogTitleBar::closeRequest, this, &FindDifferWidget::closeWindow);
 }
 
+void FindDifferWidget::saveConfig()
+{
+    QJsonObject jsonObj;
+    QJsonObject imageObj;
+    imageObj["x"] = ui->m_boxLeftX->value();
+    imageObj["y"] = ui->m_boxLeftY->value();
+    imageObj["width"] = ui->m_boxLeftW->value();
+    imageObj["height"] = ui->m_boxLeftH->value();
+    jsonObj["image1"] = imageObj;
+    imageObj["x"] = ui->m_boxRightX->value();
+    imageObj["y"] = ui->m_boxRightY->value();
+    imageObj["width"] = ui->m_boxRightW->value();
+    imageObj["height"] = ui->m_boxRightH->value();
+    jsonObj["image2"] = imageObj;
+    QJsonObject posObj;
+    posObj["x"] = pos().x();
+    posObj["y"] = pos().y();
+    jsonObj["position"] = posObj;
+    jsonObj["onTop"] = static_cast<int>(ui->m_checkOnTop->isChecked());
+    jsonObj["autoScan"] = static_cast<int>(ui->m_checkAutoScan->isChecked());
+    QJsonDocument doc(jsonObj);
+    QFile file(m_configPath);
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+    file.write(doc.toJson());
+    file.close();
+}
+
 void FindDifferWidget::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
     // Rect
-    painter.setPen(QPen(Qt::red, 3));
+    painter.setPen(QPen(Qt::red, m_borderWidth));
     painter.drawRect(m_leftRect);
     painter.drawRect(m_rightRect);
     // List Rect
     for(int i = 0; i < m_listRect.size(); i++)
     {
-        painter.setPen(QPen(Qt::blue, 2));
-        painter.drawRect(m_listRect.at(i));
+        painter.setPen(QPen(Qt::blue, m_borderWidth));
+        QRect rect = m_listRect.at(i);
+        rect = QRect(rect.x()+m_rightRect.x(), rect.y()+m_rightRect.y(), rect.width(), rect.height());
+        painter.drawRect(rect);
     }
     QWidget::paintEvent(event);
 }
@@ -133,6 +214,10 @@ void FindDifferWidget::onLeftRectChanged(int value)
     int w = ui->m_boxLeftW->value();
     int h = ui->m_boxLeftH->value();
     m_leftRect = QRect(x, y, w, h);
+
+    x = ui->m_boxRightX->value();
+    y = ui->m_boxRightY->value();
+    m_rightRect = QRect(x, y, w, h);
     update();
 }
 
@@ -143,6 +228,10 @@ void FindDifferWidget::onRightRectChanged(int value)
     int w = ui->m_boxRightW->value();
     int h = ui->m_boxRightH->value();
     m_rightRect = QRect(x, y, w, h);
+
+    x = ui->m_boxLeftX->value();
+    y = ui->m_boxLeftY->value();
+    m_leftRect = QRect(x, y, w, h);
     update();
 }
 
@@ -196,20 +285,32 @@ void FindDifferWidget::onControlPosRsp()
 
 void FindDifferWidget::onIdentifyRsp()
 {
+    QPoint globalPos = ui->m_frame->mapToGlobal(QPoint(0, 0));
     QScreen * pScreen = QApplication::primaryScreen();
     QImage gameImage = pScreen->grabWindow(0,
-                                           ui->m_frame->mapToGlobal(QPoint(0, 0)).x(),
-                                           ui->m_frame->mapToGlobal(QPoint(0, 0)).y(),
+                                           globalPos.x(),
+                                           globalPos.y(),
                                            ui->m_frame->width(),
                                            ui->m_frame->height()).toImage();
+    // 缩放至逻辑大小
+    gameImage = gameImage.scaled(ui->m_frame->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
 
-    QRect leftRect(ui->m_boxLeftX->value(), ui->m_boxLeftY->value(), ui->m_boxLeftW->value(), ui->m_boxLeftH->value());
-    QRect rightRect(ui->m_boxRightX->value(), ui->m_boxRightY->value(), ui->m_boxRightW->value(), ui->m_boxRightH->value());
+    // 使用frame坐标系，减去标题栏高度
+    int titleH = ui->m_titleBar->GetTitleHeight();
+    QRect leftRect = QRect(m_leftRect.x()+m_borderWidth, m_leftRect.y()-titleH+m_borderWidth, m_leftRect.width()-2*m_borderWidth, m_leftRect.height()-2*m_borderWidth);
+    QRect rightRect = QRect(m_rightRect.x()+m_borderWidth, m_rightRect.y()-titleH+m_borderWidth, m_rightRect.width()-2*m_borderWidth, m_rightRect.height()-2*m_borderWidth);
+    
     QImage leftImage = gameImage.copy(leftRect);
     QImage rightImage = gameImage.copy(rightRect);
+    if(!gameImage.save("/Users/mac/Desktop/game.png"))
+    {
+        qDebug() << "Failed to save game image";
+    }
+
     QList<QRect> listRect = m_findDifferManager->findDifference(leftImage, rightImage);
     m_listRect = listRect;
     update();
+    saveConfig();
 }
 
 void FindDifferWidget::onClearAllRsp()
